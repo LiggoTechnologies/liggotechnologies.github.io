@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns="http://www.w3.org/2000/svg">
+  <g id="Group-Copy-2">
+    <g id="Group-3">
+      <path d="M0 11.1628L11.1628 0L12 0.837209L0.837209 12L0 11.1628Z" id="Rectangle-2" fill="#DC4830" stroke="none"/>
+      <path d="M0.837209 0L12 11.1628L11.1628 12L0 0.837209L0.837209 0Z" id="Rectangle-2-Copy" fill="#DC4830"
+            stroke="none"/>
+    </g>
+  </g>
+</svg>
