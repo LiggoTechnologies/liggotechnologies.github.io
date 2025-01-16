@@ -3685,20 +3685,22 @@ window.animationEnd = window.animEndEventNames[Modernizr.prefixed('animation')];
     },
 
     updateFixedHeader: function (scroll) {
-      var directionDown = (scroll > lastScrollTop);
+      // Header should always be visible - 2025-01-15
 
-      if (scroll < $("#header").outerHeight()) {
-        $("#header").addClass("fixed");
-        if (window.viewport().width >= 1000) {
-          $("#header").addClass("full-height");
-        }
-      } else if (directionDown && scroll > $("#header").outerHeight()) {
-        $("#header").removeClass("fixed full-height");
-      } else {
-        $("#header").addClass("fixed");
-      }
+      // var directionDown = (scroll > lastScrollTop);
 
-      lastScrollTop = scroll;
+      // if (scroll < $("#header").outerHeight()) {
+      //   $("#header").addClass("fixed");
+      //   if (window.viewport().width >= 1000) {
+      //     $("#header").addClass("full-height");
+      //   }
+      // } else if (directionDown && scroll > $("#header").outerHeight()) {
+      //   $("#header").removeClass("fixed full-height");
+      // } else {
+      //   $("#header").addClass("fixed");
+      // }
+
+      // lastScrollTop = scroll;
     },
 
     goToTop: function () {
