@@ -275,7 +275,7 @@
         };
 
         $("#contact-overlay").addClass("newsletter");
-      } else if (type == "newsletter") {
+      } else if (type == "freeDemo") {
         formId = {
           "fr": "a847e7cf-0b95-4ecb-a30e-0e97b8753d23",
           "en": "850d7a53-2b5b-4662-a586-f5af4449bbbc"
