@@ -228,6 +228,10 @@
         e.preventDefault();
         Drupal.behaviors.liggo_contact_overlay.openModal("newsletter");
       });
+      $(".open-freeDemo-overlay").off("click").on("click", function (e) {
+        e.preventDefault();
+        Drupal.behaviors.liggo_contact_overlay.openModal("freeDemo");
+      });
     },
 
     openModal: function (type) {
@@ -257,55 +261,45 @@
       }
 
       // Different form by language
+      var formId;
       if (type == "contact") {
-        var formId = {
+        formId = {
           "fr": "ff275358-f910-41fb-8340-96b14a1e563e",
           "en": "b33b7feb-c2ad-42f9-b631-1b633225161d"
-        }
+        };
 
-        // https://legacydocs.hubspot.com/docs/methods/forms/advanced_form_options
-        hbspt.forms.create({
-          portalId: "7435029",
-          formId: formId[drupalSettings.currentLanguage],
-          target: "#contact-overlay .form-wrapper",
-          onFormReady: Drupal.behaviors.liggo_contact_overlay.iframeReady,
-          onFormSubmitted: Drupal.behaviors.liggo_contact_overlay.closeModal,
-          locale: drupalSettings.currentLanguage,
-          translations: {
-            fr: {
-              submitText: "Envoyer",
-            },
-            en: {
-              submitText: "Submit",
-            }
-          }
-        });
       } else if (type == "newsletter") {
-        var formId = {
+        formId = {
           "fr": "2b9a17f9-2ed8-46a2-8c3d-5e34ff758a8f",
           "en": "cb1234de-1589-40ff-a5de-e1361811bb2f"
-        }
-
-        // https://legacydocs.hubspot.com/docs/methods/forms/advanced_form_options
-        hbspt.forms.create({
-          portalId: "7435029",
-          formId: formId[drupalSettings.currentLanguage],
-          target: "#contact-overlay .form-wrapper",
-          onFormReady: Drupal.behaviors.liggo_contact_overlay.iframeReady,
-          onFormSubmitted: Drupal.behaviors.liggo_contact_overlay.closeModal,
-          locale: drupalSettings.currentLanguage,
-          translations: {
-            fr: {
-              submitText: "Envoyer",
-            },
-            en: {
-              submitText: "Submit",
-            }
-          }
-        });
+        };
 
         $("#contact-overlay").addClass("newsletter");
+      } else if (type == "newsletter") {
+        formId = {
+          "fr": "a847e7cf-0b95-4ecb-a30e-0e97b8753d23",
+          "en": "850d7a53-2b5b-4662-a586-f5af4449bbbc"
+        };
+
+        $("#contact-overlay").addClass("freeDemo");
       }
+      // https://legacydocs.hubspot.com/docs/methods/forms/advanced_form_options
+      hbspt.forms.create({
+        portalId: "7435029",
+        formId: formId[drupalSettings.currentLanguage],
+        target: "#contact-overlay .form-wrapper",
+        onFormReady: Drupal.behaviors.liggo_contact_overlay.iframeReady,
+        onFormSubmitted: Drupal.behaviors.liggo_contact_overlay.closeModal,
+        locale: drupalSettings.currentLanguage,
+        translations: {
+          fr: {
+            submitText: "Envoyer",
+          },
+          en: {
+            submitText: "Submit",
+          }
+        }
+      });
 
       requestAnimationFrame(function () {
         $("#contact-overlay").removeClass("hidden");
