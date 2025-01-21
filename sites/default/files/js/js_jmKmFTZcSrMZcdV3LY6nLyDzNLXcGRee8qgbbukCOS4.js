@@ -237,7 +237,7 @@
     openModal: function (type) {
 
       $("#contact-overlay").remove();
-      var $el = $("<div id='contact-overlay' class='hidden'><div class='page-overlay'></div><div class='form-wrapper hidden'><div class='close'><img class='svg' src='" + drupalSettings.pathToTheme + "/images/close-white.svg'></div></div></div>");
+      var $el = $("<div id='contact-overlay' class='hidden'><div class='page-overlay'></div><div class='form-wrapper hidden'><div class='close'><img src='" + drupalSettings.pathToTheme + "/images/close-white.png'></div></div></div>");
       $("body").append($el);
 
       window.convertSVGToInline();
