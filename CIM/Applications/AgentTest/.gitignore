@@ -1,0 +1,26 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio files
+.vs/
+
+# Visual Studio Code files
+.vscode/
+
+# NuGet packages
+packages/
+
+# Other build artifacts
+*.cache
+*.dll
+*.exe
+*.pdb
+*.log

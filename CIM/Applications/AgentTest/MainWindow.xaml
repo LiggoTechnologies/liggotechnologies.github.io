@@ -1,0 +1,39 @@
+<Window x:Class="AgentTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Agent Test Application" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Application Title -->
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
+                   Text="Agent Test Application" 
+                   FontSize="24" 
+                   FontWeight="Bold" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   Foreground="#4ebf7b"/>
+        
+        <!-- Hello World Button -->
+        <Button Grid.Row="1" Grid.Column="1" 
+                Name="HelloWorldButton" 
+                Content="Hello World" 
+                Padding="20,10" 
+                FontSize="16" 
+                Background="#4ebf7b" 
+                Foreground="White" 
+                BorderBrush="#4ebf7b"
+                Click="HelloWorldButton_Click"/>
+        
+    </Grid>
+</Window>
